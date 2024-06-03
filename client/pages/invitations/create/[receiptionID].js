@@ -8,6 +8,7 @@ import BackButton from "components/BackButton";
 import Loading from "components/Loading";
 import { MAX_INVITATION_CONTENT } from "constants/form";
 import TEMPLATES from "constants/templates";
+import { API_URL } from "constants/domain";
 import useImage from "utils/useImage";
 import postData from "utils/postData";
 import fetchData from "utils/fetchData";
@@ -37,16 +38,13 @@ export default function CreateInvitation() {
     const formData = new FormData();
     formData.append("uploadedImage", image.file, image.name);
     try {
-      const response = await fetch(
-        `${process.env.NEXT_PUBLIC_API_HOST}invitations/uploadImage`,
-        {
-          method: "POST",
-          headers: {
-            Authorization: JSON.parse(localStorage.getItem("token")),
-          },
-          body: formData,
-        }
-      );
+      const response = await fetch(`${API_URL}invitations/uploadImage`, {
+        method: "POST",
+        headers: {
+          Authorization: JSON.parse(localStorage.getItem("token")),
+        },
+        body: formData,
+      });
       const { imgUrl } = await response.json();
       setUploadImgUrl(imgUrl);
     } catch (error) {

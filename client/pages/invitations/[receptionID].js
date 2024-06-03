@@ -12,6 +12,7 @@ import BackButton from "components/BackButton";
 import Layout from "components/Layout";
 import Error from "components/Error";
 import Loading from "components/Loading";
+import { CLIENT_DOMAIN } from "constants/domain";
 import fetchData from "utils/fetchData";
 import { formatDate, formatTime } from "utils/formatDate";
 import Styles from "styles/invitations.module.scss";
@@ -109,9 +110,7 @@ export default function Ivitations() {
                       <button
                         type="button"
                         onClick={() => {
-                          handleCopy(
-                            `${process.env.NEXT_PUBLIC_HOST}invitation/${_id}`
-                          );
+                          handleCopy(`${CLIENT_DOMAIN}invitation/${_id}`);
                         }}
                       >
                         複製網址

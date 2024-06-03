@@ -1,3 +1,5 @@
+import { API_URL } from "constants/domain";
+
 async function fetchData(url, token) {
   const JWTtoken = token || JSON.parse(localStorage.getItem("token"));
   const headers = new Headers();
@@ -5,7 +7,7 @@ async function fetchData(url, token) {
     headers.append("Authorization", JWTtoken);
   }
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
+    const response = await fetch(`${API_URL}${url}`, {
       headers,
     });
     const result = await response.json();

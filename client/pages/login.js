@@ -6,6 +6,7 @@ import { Input, Button, Typography, Space } from "antd";
 import { LoginOutlined, ExclamationCircleOutlined } from "@ant-design/icons";
 
 import Layout from "components/Layout";
+import { API_URL } from "constants/domain";
 import postData from "utils/postData";
 import { validateEmail, validatePassword } from "utils/validations";
 import GoogleImg from "public/google_color.svg";
@@ -134,10 +135,7 @@ function Login() {
                   登入
                 </Button>
               </Space>
-              <a
-                href={`${process.env.NEXT_PUBLIC_API_HOST}auth/google`}
-                className={Styles.googleBtn}
-              >
+              <a href={`${API_URL}auth/google`} className={Styles.googleBtn}>
                 <Image src={GoogleImg} alt="google login" />
                 <p>使用 google 登入</p>
               </a>

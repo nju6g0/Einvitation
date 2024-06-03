@@ -32,7 +32,9 @@ passport.use(
     {
       clientID: process.env.GOOGLE_CLIENT_ID,
       clientSecret: process.env.GOOGLE_CLIENT_SECRET,
-      callbackURL: "http://localhost:8080/api/auth/google/redirect",
+      // callbackURL: "http://localhost:8080/api/auth/google/redirect",
+      callbackURL:
+        "https://e-invitaion-6db5dd66a01c.herokuapp.com/api/auth/google/redirect",
     },
     async (accessToken, refreshToken, profile, done) => {
       // 判斷使用都是否為第一次登入？

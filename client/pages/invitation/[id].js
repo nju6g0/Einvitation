@@ -4,6 +4,7 @@ import { Button, Radio, Form, InputNumber, message } from "antd";
 
 import Layout from "components/Layout";
 import { TEMPLATE_NAMES } from "constants/templates";
+import { API_URL } from "constants/domain";
 import postData from "utils/postData";
 import getTemplate from "utils/getTemplate";
 import Styles from "styles/invitation.module.scss";
@@ -11,7 +12,7 @@ import FormStyles from "styles/form.module.scss";
 
 export async function getServerSideProps({ params }) {
   const { id } = params;
-  const result = await fetch(`${process.env.API_HOST}invitation/${id}`);
+  const result = await fetch(`${API_URL}invitation/${id}`);
   const data = await result.json();
 
   if (data.error) {

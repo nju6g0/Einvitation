@@ -1,3 +1,5 @@
+import { API_URL } from "constants/domain";
+
 async function postData(url, data) {
   const headers = new Headers({
     "Content-Type": "application/json",
@@ -7,7 +9,7 @@ async function postData(url, data) {
     headers.append("Authorization", token);
   }
   try {
-    const response = await fetch(`${process.env.NEXT_PUBLIC_API_HOST}${url}`, {
+    const response = await fetch(`${API_URL}${url}`, {
       method: "POST",
       headers,
       body: JSON.stringify(data),
