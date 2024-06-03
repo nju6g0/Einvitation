@@ -10,10 +10,12 @@ const invitationRoute = require("./routes").invitation;
 const adminRoute = require("./routes").admin;
 const passport = require("passport");
 require("./config/passport");
+const path = require("path");
+const port = process.env.PORT || 8080;
 
 // 連結 mongoDB
 mongoose
-  .connect("mongodb://127.0.0.1:27017/einvitationDB")
+  .connect(process.env.MONGODB_CONNECTION) //"mongodb://127.0.0.1:27017/einvitationDB"
   .then(() => {
     console.log("mongoDB has connected...");
   })
@@ -26,6 +28,7 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
+app.use(express.static(path.join(__dirname, "client", "build")));
 
 app.use("/api/auth", authRoute);
 app.use(
@@ -55,6 +58,15 @@ app.get(
     })
 );
 
-app.listen(process.env.PORT, () => {
-  console.log(`server is listening on ${process.env.PORT} port...`);
+if (
+  process.env.NODE_ENV === "production" ||
+  process.env.NODE_ENV === "staging"
+) {
+  app.get("*", (req, res) => {
+    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+  });
+}
+
+app.listen(port, () => {
+  console.log(`server is listening on ${port} port...`);
 });

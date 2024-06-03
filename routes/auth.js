@@ -28,7 +28,7 @@ router.get(
     const tokenObject = { _id: req.user._id, email: req.user.email };
     const token = jwt.sign(tokenObject, process.env.PASSPORT_SECRET);
 
-    return res.redirect(`${process.env.DOMAIN}auth/google/JWT ${token}`);
+    return res.redirect(`${process.env.CLIENT_DOMAIN}auth/google/JWT ${token}`);
   }
 );
 
