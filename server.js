@@ -15,7 +15,8 @@ const port = process.env.PORT || 8080;
 
 // 連結 mongoDB
 mongoose
-  .connect(process.env.MONGODB_CONNECTION) //"mongodb://127.0.0.1:27017/einvitationDB"
+  // .connect("mongodb://127.0.0.1:27017/einvitationDB")
+  .connect(process.env.MONGODB_CONNECTION)
   .then(() => {
     console.log("mongoDB has connected...");
   })
@@ -28,7 +29,9 @@ mongoose
 app.use(express.json());
 app.use(express.urlencoded({ extended: true }));
 app.use(cors());
-app.use(express.static(path.join(__dirname, "client", "build")));
+app.use(
+  express.static(path.join(__dirname, "client", ".next", "server", "pages"))
+);
 
 app.use("/api/auth", authRoute);
 app.use(
@@ -63,7 +66,9 @@ if (
   process.env.NODE_ENV === "staging"
 ) {
   app.get("*", (req, res) => {
-    res.sendFile(path.join(__dirname, "client", "build", "index.html"));
+    res.sendFile(
+      path.join(__dirname, "client", ".next", "server", "pages", "index.html")
+    );
   });
 }
 
