@@ -1,0 +1,16 @@
+const MIN_PASSWORD_LENGTH = 6;
+const MAX_PASSWORD_LENGTH = 16;
+const MIN_USERNAME_LENGTH = 2;
+const MAX_USERNAME_LENGTH = 255;
+
+const ADMIN = "admin";
+const MEMBER = "member";
+
+module.exports = {
+  MIN_PASSWORD_LENGTH,
+  MAX_PASSWORD_LENGTH,
+  MIN_USERNAME_LENGTH,
+  MAX_USERNAME_LENGTH,
+  ADMIN,
+  MEMBER,
+};

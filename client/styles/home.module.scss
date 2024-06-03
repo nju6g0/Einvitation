@@ -1,0 +1,108 @@
+@import "variables.module.scss";
+
+.wrap {
+  > div:first-child {
+    font-family: "Playfair Display";
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/einvitation-421803.appspot.com/o/images%2Fmarc-a-sporys-NO8Sj4dKE8k-unsplash.webp?alt=media&token=6eb5e607-1487-40d6-979b-88e7e92bb65b");
+    height: calc(100vh - 122px);
+    background-size: cover;
+    background-position: center;
+    position: relative;
+    transition: 0.3s;
+    .cover {
+      position: absolute;
+      width: 100%;
+      height: 100%;
+      background-color: rgba(69, 10, 53, 0.3);
+      color: #fff;
+      padding: 50px 160px;
+      > h1 {
+        font-size: 80px;
+        font-weight: 500;
+        text-shadow: 5px 5px 5px $primaryColor;
+        word-wrap: nowrap;
+      }
+      > p {
+        font-family: Cambria, Cochin, Georgia, Times, "Times New Roman", serif;
+        font-size: 40px;
+        font-weight: bolder;
+        display: inline-block;
+        padding: 0 16px;
+        animation: spark 1.5s ease-in;
+        animation-iteration-count: infinite;
+        cursor: pointer;
+        &:hover {
+          color: $primaryColor;
+          text-shadow: 0px 0px 2px #fff;
+          animation: none;
+          background-color: $coverWhite;
+          border-radius: 10px;
+        }
+      }
+      > a {
+        display: block;
+        height: 100px;
+        width: 100px;
+        border: 1px solid #fff;
+        border-radius: 50%;
+        line-height: 100px;
+        text-align: center;
+        transform: rotate(-25deg);
+        transition: 2s;
+        cursor: pointer;
+        &:hover {
+          transform: rotate(25deg);
+        }
+      }
+    }
+    @keyframes spark {
+      0% {
+        opacity: 1;
+      }
+      50% {
+        opacity: 0.6;
+      }
+      100% {
+        opacity: 1;
+      }
+    }
+    @media screen and (max-width: $mediaLarge) {
+      > div:first-child {
+        padding: 50px 80px;
+        h1 {
+          font-size: 70px;
+        }
+        p {
+          font-size: 30px;
+        }
+      }
+    }
+    @media screen and (max-width: $mediaMiddle) {
+      > div:first-child {
+        padding: 120px 60px;
+        h1 {
+          font-size: 60px;
+        }
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+    @media screen and (max-width: $mediaSmall) {
+      > div:first-child {
+        padding: 30px 60px;
+        h1 {
+          font-size: 48px;
+        }
+        p {
+          font-size: 24px;
+        }
+      }
+    }
+  }
+  > div:nth-child(2),
+  > div:nth-child(3) {
+    max-width: 1280px;
+    margin: 100px auto;
+  }
+}

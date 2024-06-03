@@ -1,0 +1,17 @@
+@import "variables.module.scss";
+
+.container {
+  margin-top: 50px;
+}
+.reply {
+  margin-top: 50px;
+  min-width: 300px;
+  border: 1px solid $primaryColor;
+  padding: 16px;
+  display: inline-block;
+}
+
+.form {
+  padding: 16px;
+  border-top: 1px dashed $primaryColor;
+}

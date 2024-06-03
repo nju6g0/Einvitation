@@ -1,0 +1,264 @@
+@import "variables.module.scss";
+
+.A01 {
+  padding: 30px 0;
+  display: flex;
+  .info {
+    flex-shrink: 0;
+    width: 560px;
+    > div {
+      float: left;
+      width: 260px;
+      height: 320px;
+      color: #fff;
+    }
+    > div:first-child,
+    > div:last-child {
+      height: auto;
+      position: relative;
+      padding: 36px;
+      &::after {
+        content: "";
+        width: 80%;
+        height: 80%;
+        border: 1px solid #fff;
+        position: absolute;
+        top: 50%;
+        left: 50%;
+        transform: translate(-50%, -50%);
+      }
+    }
+    > div:first-child {
+      background-color: $brownRed;
+      margin-right: 2.5rem;
+      font-family: "Noto Serif TC", serif;
+      letter-spacing: 1px;
+      > p:first-child {
+        font-size: 20px;
+        font-weight: bold;
+        font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+          sans-serif;
+        position: relative;
+        margin-bottom: 34px;
+        &::after {
+          content: "";
+          position: absolute;
+          bottom: -10px;
+          left: 0;
+          width: 80px;
+          height: 1px;
+          background-color: #fff;
+        }
+      }
+    }
+    > div:last-child {
+      background-color: $greenDark;
+      margin-left: 30px;
+      margin-top: 48px;
+      letter-spacing: 2px;
+      text-align: center;
+      > p:first-child {
+        font-weight: bolder;
+        font-size: 32px;
+        font-family: Dancing Script;
+      }
+      > p:nth-child(2) {
+        font-size: 24px;
+      }
+    }
+    div {
+      img {
+        width: 100%;
+        height: 100%;
+        object-fit: cover;
+      }
+    }
+  }
+  .content {
+    font-family: Dancing Script;
+    padding: 48px 48px 48px 6rem;
+    > p:nth-child(1) {
+      font-size: 32px;
+      font-weight: bold;
+      color: $grayDark;
+    }
+    > p:nth-child(2) {
+      width: 80px;
+      height: 1px;
+      background-color: $primaryColor;
+    }
+    > p:nth-child(3) {
+      text-align: right;
+      span {
+        transform: rotate(10deg);
+        color: $colorPink;
+        font-size: 42px;
+      }
+    }
+    > p:nth-child(4) {
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 2px;
+    }
+  }
+  @media screen and (max-width: $mediaLarge) {
+    flex-direction: column-reverse;
+    .info,
+    .content {
+      width: 100%;
+    }
+    .info {
+      > div {
+        width: 45%;
+      }
+      > div:first-child {
+        p {
+          text-align: center;
+        }
+        > p:first-child {
+          &::after {
+            left: 50%;
+            transform: translateX(-50%);
+          }
+        }
+      }
+    }
+  }
+  @media screen and (max-width: $mediaMiddle) {
+    .info {
+      > div {
+        width: 100%;
+        margin: 0 !important;
+      }
+      > div:nth-child(2) {
+        display: none;
+      }
+    }
+    .content {
+      padding: 24px;
+    }
+  }
+}
+
+.A02 {
+  min-height: 500px;
+  background-color: $secondaryColor;
+  border-radius: 20px;
+  padding: 50px;
+  margin-bottom: 80px;
+  position: relative;
+  &::after {
+    content: "誠摯邀請";
+    color: $secondaryColor;
+    width: 200px;
+    font-size: 18px;
+    letter-spacing: 2px;
+    text-align: center;
+    padding: 20px;
+    background-color: $primaryColor;
+    border: 1px solid $coverWhite;
+    position: absolute;
+    top: 20px;
+    right: 20px;
+  }
+  .content {
+    width: 60%;
+    padding-right: 10vw;
+    font-family: Dancing Script;
+    > p:nth-child(1) {
+      font-size: 32px;
+      font-weight: bold;
+      color: $grayDark;
+    }
+    > p:nth-child(2) {
+      min-height: 260px;
+      font-size: 18px;
+      line-height: 32px;
+      letter-spacing: 2px;
+      border-bottom: 1px solid $coverWhite;
+      padding-bottom: 40px;
+    }
+  }
+  .info {
+    > p:nth-child(1),
+    > p:nth-child(3),
+    > p:nth-child(5) {
+      display: inline-block;
+      margin: 0;
+      margin-right: -40px;
+      padding: 8px 18px;
+      background-color: $cover;
+      color: $secondaryColor;
+      font-family: "Gill Sans", "Gill Sans MT", Calibri, "Trebuchet MS",
+        sans-serif;
+      letter-spacing: 1px;
+    }
+    > p:nth-child(3),
+    > p:nth-child(5) {
+      font-weight: 600;
+      font-size: 18px;
+      font-family: "Noto Serif TC", serif;
+    }
+  }
+  .thumbnail {
+    width: 40%;
+    aspect-ratio: 4 / 5;
+    flex-shrink: 0;
+    overflow: hidden;
+    border-radius: 40px;
+    position: absolute;
+    bottom: -80px;
+    right: 40px;
+    box-shadow: 5px 5px 10px $cover;
+    > img {
+      width: 100%;
+      height: 100%;
+      object-fit: cover;
+    }
+  }
+  @media screen and (max-width: $mediaLarge) {
+    display: flex;
+    &::after {
+      top: calc(100% - 80px);
+      left: 20px;
+    }
+    .thumbnail {
+      aspect-ratio: 1 / 1;
+    }
+  }
+  @media screen and (max-width: 900px) {
+    .thumbnail {
+      aspect-ratio: 4 / 5;
+    }
+  }
+  @media screen and (max-width: $mediaMiddle) {
+    width: 100%;
+    padding: 20px 0;
+    flex-direction: column;
+    border-radius: 0;
+    &::after {
+      left: 50%;
+      transform: translateX(-50%);
+    }
+    .content,
+    .info,
+    .thumbnail {
+      width: 100%;
+      p {
+        width: 100% !important;
+      }
+    }
+    .content {
+      padding: 20px 16px;
+    }
+    .thumbnail {
+      position: relative;
+      top: 0;
+      left: 0;
+      aspect-ratio: 2 / 3;
+      width: 300px;
+      margin: 0 auto;
+      border-radius: 0;
+    }
+  }
+}

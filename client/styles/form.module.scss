@@ -1,0 +1,178 @@
+@import "variables.module.scss";
+
+.head {
+  @extend %flexCenter;
+  h1 {
+    position: relative;
+    margin-bottom: 50px;
+    &::after {
+      content: "";
+      position: absolute;
+      top: 100%;
+      left: 80px;
+      width: 50px;
+      height: 3px;
+      background-color: $primaryColor;
+    }
+  }
+  a {
+    min-width: 60px;
+    margin: 0 16px;
+    @extend %flexCenter;
+    &:hover {
+      text-decoration: underline;
+      color: $primaryColor;
+      font-weight: 600;
+    }
+  }
+  .hint {
+    color: $gray;
+    font-size: 12px;
+    width: 260px;
+    text-align: right;
+    > span {
+      margin-right: 8px;
+    }
+    > a {
+      margin: 0;
+      color: $anchorColor;
+      display: inline-block;
+    }
+  }
+  @media screen and (max-width: $mediaSmall) {
+    .hint {
+      width: 50%;
+    }
+  }
+}
+.container {
+  color: $grayDark;
+  border: 1px solid $primaryColor;
+  max-width: 600px;
+  margin: 0 auto;
+  padding: 20px 40px;
+  box-shadow: 5px 5px 20px $secondaryColor;
+  p {
+    margin: 0;
+  }
+  form {
+    margin-top: 24px;
+    textarea {
+      resize: none;
+    }
+  }
+  .thumbnail {
+    width: 300px;
+  }
+  @media screen and (max-width: $mediaSmall) {
+    .thumbnail {
+      width: 100%;
+    }
+  }
+}
+
+.formButton {
+  border: 1px solid $primaryColor;
+  color: $primaryColor;
+  background-color: transparent;
+  border-radius: 20px;
+  &:hover {
+    border: none !important;
+    color: #fff !important;
+    background-color: $colorPink !important;
+  }
+}
+.formButtonScondary {
+  border: 1px solid $gray;
+  color: $gray;
+  background-color: transparent;
+  border-radius: 20px;
+  margin-right: 16px;
+  &:hover {
+    border: none !important;
+    background-color: $secondaryColor !important;
+    color: #fff !important;
+  }
+}
+
+.upload {
+  display: flex;
+  .hideInput {
+    display: none;
+  }
+  span {
+    font-size: 24px;
+  }
+  p {
+    font-size: 14px;
+    display: inline-block;
+  }
+  > div {
+    .uploadBtn {
+      span {
+        display: none;
+      }
+    }
+  }
+  .uploadInput {
+    width: 120px;
+    height: 120px;
+    border-radius: 5px;
+    border: 1px solid $grayLight;
+    color: $grayDark;
+    background-color: #fff;
+    display: flex;
+    flex-direction: column;
+    justify-content: center;
+    align-items: center;
+    cursor: pointer;
+    margin-bottom: 20px;
+    p {
+      margin: 8px 0 0 0;
+    }
+  }
+
+  .thumbnail {
+    width: 300px;
+    margin-right: 16px;
+  }
+
+  @media screen and (max-width: 480px) {
+    flex-direction: column;
+    > div {
+      margin-top: 16px;
+      display: flex;
+      align-items: bottom;
+      .uploadBtn {
+        width: 80px;
+        height: 80px;
+        p {
+          display: none;
+        }
+        span {
+          display: block;
+        }
+      }
+    }
+    .uploadInput {
+      width: 80px;
+      height: 80px;
+      margin-right: 16px;
+      margin-bottom: 0;
+      p {
+        font-size: 8px;
+      }
+    }
+    .thumbnail {
+      width: 100%;
+    }
+  }
+}
+
+.preView {
+  background-color: $backgroundColor;
+  padding: 16px;
+  max-width: 1280px;
+  margin: 0 auto;
+  margin-bottom: 50px;
+}

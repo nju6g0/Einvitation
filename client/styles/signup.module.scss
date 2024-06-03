@@ -1,0 +1,39 @@
+@import "variables.module.scss";
+
+.container {
+  display: flex;
+  justify-content: center;
+  align-items: center;
+  height: calc(100vh - 128px);
+  h1,
+  p {
+    text-shadow: 2px 2px 0 #fff;
+  }
+  > div {
+    width: 600px;
+    padding: 20px 40px;
+    border: 1px solid #000;
+    background-color: rgba(255, 255, 255, 0.8);
+    position: relative;
+    box-shadow: 20px -5px 0 rgba(0, 0, 0, 0.3);
+    background-image: url("https://firebasestorage.googleapis.com/v0/b/einvitation-421803.appspot.com/o/images%2Flogin_cover.webp?alt=media&token=f9eae177-1f81-4874-a15f-6d2c14ecdf6a");
+    background-size: cover;
+  }
+  .form {
+    margin-right: 120px;
+    background-color: rgba(255, 255, 255, 0.5);
+    padding: 20px 40px;
+  }
+  a {
+    color: $anchorColor;
+    text-decoration: underline;
+  }
+  @media screen and (max-width: $mediaSmall) {
+    > div {
+      background-position: right;
+    }
+    .form {
+      margin: 0 auto;
+    }
+  }
+}

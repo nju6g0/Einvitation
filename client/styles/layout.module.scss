@@ -1,0 +1,24 @@
+@import "variables.module.scss";
+
+.wrap {
+  background-color: $backgroundColor;
+}
+.container {
+  max-width: 1280px;
+  margin: 0 auto;
+}
+.body {
+  min-height: calc(100vh - 122px);
+  padding: 0 20px;
+}
+
+.fullbody {
+  min-height: calc(100vh - 122px);
+}
+
+.footer {
+  background-color: $primaryColor;
+  color: #fff;
+  padding: 8px;
+  text-align: center;
+}

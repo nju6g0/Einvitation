@@ -1,0 +1,28 @@
+@import "variables.module.scss";
+
+.container{
+  font-family: Josefin Slab;
+  p{
+    margin: 0 0 5px 0;
+    text-align: center;
+    font-weight: 600;
+  }
+  .name {
+    font-size: 36px;
+    font-weight: bolder;
+    font-family: "Caveat", "Noto Sans TC";
+  }
+  .divider {
+    display: inline-block;
+    width: 100%;
+    height: 1px;
+    background-color: black;
+    transform: translateY(-6px);
+    box-shadow: 2px 2px 5px $primaryColor;
+  }
+  @media screen and (max-width:$mediaSmall) { 
+    .name {
+      font-size: 24px;
+    }
+  }
+}

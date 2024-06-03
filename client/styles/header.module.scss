@@ -1,0 +1,43 @@
+@import "variables.module.scss";
+
+.wrap {
+
+}
+.container {
+  @extend %flexCenter;
+  max-width: 1280px;
+  margin: 0 auto;
+  padding: 0 16px;
+  a:hover{
+    color: $primaryColor;
+  }
+  .logout{
+    display: flex;
+    align-items: center;
+    &:hover{
+      text-decoration: underline;
+      cursor: pointer;
+      >span{
+        color: $primaryColor;
+      }
+    }
+  }
+  .user {
+    width: 40px;
+    height: 40px;
+    border-radius: 50%;
+    border: 2px solid $grayDark;
+    color: $grayDark;
+    display: flex;
+    align-items: center;
+    justify-content: center;
+    margin-right: 16px;
+    &:hover {
+      color: $primaryColor;
+      border-color: $primaryColor;
+    }
+  }
+  .icon{
+    font-size: 28px;
+  }
+}
