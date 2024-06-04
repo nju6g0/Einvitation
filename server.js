@@ -61,17 +61,6 @@ app.get(
     })
 );
 
-if (
-  process.env.NODE_ENV === "production" ||
-  process.env.NODE_ENV === "staging"
-) {
-  app.get("*", (req, res) => {
-    res.sendFile(
-      path.join(__dirname, "client", ".next", "server", "pages", "index.html")
-    );
-  });
-}
-
 app.listen(port, () => {
   console.log(`server is listening on ${port} port...`);
 });
